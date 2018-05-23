@@ -24,7 +24,7 @@ module AnimeauxBack
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins 'localhost:8080'
+        origins Rails.env.production? ? 'www.animeaux.org' : 'localhost:8080'
         resource '*', :headers => :any, :methods => :any
       end
     end
