@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   # GET /events
   def index
     respond_to do |format|
-      @events = Event.all
+      @events = Event.limit(2)
       format.json { render template: 'events/index', status: :ok }
     end
   end
