@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  match '/',
+    :to => redirect{|params, request| "https://www.animeaux.org/" },
+    :via => :all
   resources :newsletters
   resources :events
   resources :animals
