@@ -25,4 +25,6 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: animeaux_production
+  username: postgres
+  password: <%= ENV['ANIMEAUX_DATABASE_PASSWORD'] %>
