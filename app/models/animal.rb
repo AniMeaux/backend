@@ -1,4 +1,9 @@
 class Animal < ApplicationRecord
+  has_many :images, through: :animal_images
+  has_many :animal_images
+
+  accepts_nested_attributes_for :images
+
   validates :name, length: { minimum: 2 }
   validates :species, length: { minimum: 2 }
   validates :description, length: { maximum: 1200 }

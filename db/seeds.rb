@@ -22,5 +22,10 @@ if !Rails.env.production?
       event_type: Faker::Number.between(0, 2)
     )
   end
-  
+
+  if !User.exists?(email: 'admin@example.com')
+    User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+  end
 end
+
+  
