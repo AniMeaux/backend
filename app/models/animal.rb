@@ -2,7 +2,8 @@ class Animal < ApplicationRecord
   has_many :images, through: :animal_images
   has_many :animal_images
 
-  accepts_nested_attributes_for :images
+  accepts_nested_attributes_for :images, allow_destroy: true
+  accepts_nested_attributes_for :animal_images, allow_destroy: true
 
   validates :name, length: { minimum: 2 }
   validates :species, length: { minimum: 2 }

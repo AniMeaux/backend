@@ -28,16 +28,13 @@ ActiveAdmin.register Animal do
       f.input :gender
       f.input :species
       f.input :status
-      f.inputs do
-        f.has_many :images do |a|
-          puts "a", a
-          unless a.object.new_record?
-            a.input :_destroy, :as => :boolean, :required => false, :label => "Delete this picture"
-          end
-          a.input :picture, :as => :file, :hint => image_tag(
-            a.object.picture_url(:active_admin)
-          )
+      f.has_many :images do |a|
+        unless a.object.new_record?
+          a.input :_destroy, :as => :boolean, :required => false, :label => "Delete this picture"
         end
+        a.input :picture, :as => :file, :hint => image_tag(
+          a.object.picture_url(:active_admin)
+        )
       end
     end
     f.actions
