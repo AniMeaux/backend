@@ -21,7 +21,7 @@ ActiveAdmin.register Event do
     f.inputs "Event" do
       f.input :event_type
       f.input :name
-      f.input :description
+      f.input :description, as: :string
       f.input :begin_at
       f.input :end_at
       f.input :status
