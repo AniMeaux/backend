@@ -23,7 +23,7 @@ ActiveAdmin.register Animal do
     f.inputs "Animal" do
       f.input :category
       f.input :name
-      f.input :description
+      f.input :description, as: :text
       f.input :age
       f.input :gender
       f.input :species
