@@ -24,7 +24,7 @@ gem 'puma', '~> 3.0'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 
-gem 'devise'
+gem 'devise', '~> 4.4.0'
 gem 'activeadmin'
 gem 'rack-cors'
 gem 'faker'
