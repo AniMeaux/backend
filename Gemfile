@@ -31,7 +31,8 @@ gem 'faker'
 gem 'jbuilder'
 gem 'carrierwave', '~> 1.0'
 gem 'cloudinary'
-gem 'sprockets', '~> 3.7.2'
+gem 'rake'
+gem 'sprockets', '~> 3.6.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
