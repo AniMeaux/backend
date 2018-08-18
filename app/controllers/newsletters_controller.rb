@@ -60,6 +60,7 @@ class NewslettersController < ApplicationController
       if @newsletter.save
         begin
           response = post_sendgrid(newsletter_params[:email])
+          puts "Response", response
           format.json { render json: response, status: :created }
         rescue => e
           puts "Error occured #{e}"
