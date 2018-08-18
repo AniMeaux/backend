@@ -16,6 +16,8 @@ def post_sendgrid(email)
       'Authorization' => "Bearer #{SENDGRID_CONFIG['api_key']}"
     })
 
+    puts "Config?", SENDGRID_CONFIG['api_key']
+
     req.body = [
       {
         "email": email
@@ -54,7 +56,6 @@ class NewslettersController < ApplicationController
   # POST /newsletters.json
   def create
     @newsletter = Newsletter.new(newsletter_params)
-
     
     respond_to do |format|
       if @newsletter.save
