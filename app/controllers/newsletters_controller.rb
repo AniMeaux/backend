@@ -60,7 +60,7 @@ class NewslettersController < ApplicationController
       if @newsletter.save
         begin
           response = post_sendgrid(newsletter_params[:email])
-          format.json { render template: 'newsletters/show', status: :created }
+          format.json { render json: response, status: :created }
         rescue => e
           puts "Error occured #{e}"
           format.json { render template: 'newsletters/show', status: :unprocessable_entity }
